@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThermoLab | Simulação térmica</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><span class="eyebrow">LABORATÓRIO INTERATIVO</span><h1>Thermo<span>Lab</span></h1><p>Condução, convecção, radiação e dilatação térmica em uma barra.</p></div>
+  </header>
+  <main class="wrap layout">
+    <aside class="panel controls">
+      <h2>Configuração</h2>
+      <h3>Fenômenos</h3>
+      <div class="button-grid" aria-label="Fenômeno térmico">
+        <button type="button" data-mode="cond">Condução</button><button type="button" data-mode="conv">Convecção</button>
+        <button type="button" data-mode="rad">Radiação</button><button type="button" data-mode="all">Combinado</button>
+      </div>
+      <h3>Regime</h3>
+      <div class="button-grid"><button type="button" data-regime="steady">Estacionário</button><button type="button" data-regime="transient">Transiente</button></div>
+      <div class="tr actions"><button type="button" id="play">Pausar</button><button type="button" id="reset">Reiniciar</button></div>
+      <h3>Material</h3>
+      <label class="row">Selecionar material<select id="mat"></select></label>
+      <div class="properties">
+        <label>k <small>W/m·K</small><input id="k" type="number" min="0.001" step="any"></label>
+        <label>ε <small>emissividade</small><input id="eps" type="number" min="0" max="1" step="any"></label>
+        <label>α <small>10⁻⁶/K</small><input id="alpha" type="number" min="0.001" step="any"></label>
+        <label>ρ <small>kg/m³</small><input id="rho" type="number" min="0.001" step="any"></label>
+        <label>cₚ <small>J/kg·K</small><input id="cp" type="number" min="0.001" step="any"></label>
+      </div>
+      <h3>Parâmetros</h3><div id="sliders"></div>
+    </aside>
+    <div class="dashboard">
+      <section class="panel"><div class="section-head"><h2>Barra térmica</h2><span>Perfil e dilatação</span></div><canvas id="bar" class="bar-canvas" aria-label="Visualização da barra"></canvas><p class="equation" id="eq"></p></section>
+      <section class="metrics">
+        <div class="panel metric"><span>Dilatação ΔL</span><strong id="r_dl"></strong></div>
+        <div class="panel metric"><span>Temperatura média</span><strong id="r_tm"></strong></div>
+        <div class="panel metric"><span>Biot</span><strong id="r_bi"></strong></div>
+        <div class="panel metric"><span>Tempo</span><strong id="r_t"></strong></div>
+        <div class="panel metric"><span>h radiação</span><strong id="r_hr"></strong></div>
+      </section>
+      <section class="chart-grid"><div class="panel"><h2>Temperatura ao longo da barra</h2><canvas id="c1" class="chart" aria-label="Gráfico de temperatura"></canvas></div><div class="panel"><h2>Dilatação por material</h2><canvas id="c2" class="chart" aria-label="Gráfico de dilatação"></canvas></div></section>
+      <section class="panel"><h2>Fluxos de calor</h2><div id="fluxes"></div></section>
+      <section class="panel"><h2>Cálculos passo a passo</h2><div id="calc" class="calculations"></div></section>
+    </div>
+  </main>
+</body>
+</html>

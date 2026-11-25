@@ -1,0 +1,19 @@
+{
+  "name": "thermolab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "esbuild src/app.ts --bundle --format=iife --target=es2020 --outfile=js/app.js --servedir=.",
+    "build": "esbuild src/app.ts --bundle --format=iife --target=es2020 --outfile=js/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}
