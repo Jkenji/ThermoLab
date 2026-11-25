@@ -55,7 +55,7 @@
       var PRESETS = [
         { label: "1 \xB7 Cobre (condu\xE7\xE3o)", mat: 2, mode: "cond", regime: "steady", Th: 200, Tc: 20, L: 1, D: 0.02, h: 25, Tinf: 20, speedExp: 3, exagExp: 2 },
         { label: "2 \xB7 Alum\xEDnio (convec\xE7\xE3o)", mat: 1, mode: "conv", regime: "steady", Th: 100, Tc: 20, L: 0.5, D: 0.01, h: 25, Tinf: 20, speedExp: 3, exagExp: 2.5 },
-        { label: "3 \xB7 A\xE7o Inox (radia\xE7\xE3o)", mat: 0, mode: "rad", regime: "steady", Th: 600, Tc: 300, L: 0.3, D: 0.03, h: 5, Tinf: 20, speedExp: 3, exagExp: 1.7 }
+        { label: "3 \xB7 A\xE7o Inox (combinado)", mat: 0, mode: "all", regime: "steady", Th: 600, Tc: 300, L: 0.3, D: 0.03, h: 5, Tinf: 20, speedExp: 3, exagExp: 1.7 }
       ];
       var $ = (id) => document.getElementById(id);
       var opt = (id) => document.getElementById(id);
