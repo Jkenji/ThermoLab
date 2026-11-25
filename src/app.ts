@@ -47,7 +47,7 @@ interface Preset { label: string; mat: number; mode: Mode; regime: Regime; Th: n
 const PRESETS: Preset[] = [
   { label: '1 · Cobre (condução)',   mat: 2, mode: 'cond', regime: 'steady',    Th: 200, Tc: 20,  L: 1,   D: 0.02, h: 25,  Tinf: 20, speedExp: 3, exagExp: 2 },
   { label: '2 · Alumínio (convecção)',  mat: 1, mode: 'conv', regime: 'steady',    Th: 100, Tc: 20,  L: 0.5, D: 0.01, h: 25,  Tinf: 20, speedExp: 3, exagExp: 2.5 },
-  { label: '3 · Aço Inox (radiação)',   mat: 0, mode: 'rad',  regime: 'steady',    Th: 600, Tc: 300, L: 0.3, D: 0.03, h: 5,   Tinf: 20, speedExp: 3, exagExp: 1.7 },
+  { label: '3 · Aço Inox (combinado)',   mat: 0, mode: 'all',  regime: 'steady',    Th: 600, Tc: 300, L: 0.3, D: 0.03, h: 5,   Tinf: 20, speedExp: 3, exagExp: 1.7 },
 ];
 
 const $ = <E extends HTMLElement>(id: string) => document.getElementById(id) as E;
